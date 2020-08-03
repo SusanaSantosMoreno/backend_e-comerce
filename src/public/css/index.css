@@ -1,0 +1,27 @@
+#myNavbar {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    background-color: white !important;
+}
+
+nav, .carousel-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+.carousel-item img{
+    height: 800px;
+}
+
+.carousel-text{
+    color: black;
+}
+
+.carousel-text-up{
+    color: black;
+    margin-bottom: 25%;
+}
+
+.carousel-text-w{
+    color: white;
+}

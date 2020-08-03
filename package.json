@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/index"
+    "start": "node src/index.js",
+    "dev": "nodemon --legacy-watch src src/index.js"
   },
   "author": "Susana Santos Moreno",
   "license": "ISC",
