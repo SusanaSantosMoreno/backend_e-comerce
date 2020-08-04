@@ -1,0 +1,110 @@
+#myNavbar {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    background-color: white !important;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+.carousel-item img{
+    height: 800px;
+}
+
+.carousel-text{
+    color: black;
+}
+
+.carousel-text-up{
+    color: black;
+    margin-bottom: 25%;
+}
+
+.carousel-text-w{
+    color: white;
+}
+
+.blockTitle{
+    font-weight: 200;
+    text-align: center;
+}
+
+.blockTitle::after{
+    content: "";
+    display: block;
+    margin: 0 auto;
+    padding-top: 0.5rem;
+    width: 3.5rem;
+    border-bottom: 3px solid #86c4ba;
+}
+
+.itemsList li{
+    border-color: white;
+}
+
+.list-group-item{
+    transition: 0.3s;
+}
+
+.list-group-item:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.list-group-item span{
+    color: #868686;
+    transition: 0.3s;
+}
+
+.list-group-item:hover span{
+    color: black;
+}
+
+.active-item span{
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.card{
+    border-color: white !important;
+}
+
+.card-body{
+    font-weight: 200;
+}
+
+.card-title{
+    font-weight: 300;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.card-text{
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 200;
+}
+
+.price{
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.card-body{
+    text-align: center;
+}
+
+.starts::before{
+    content: "|";
+    margin: 0 auto;
+    padding-top: 0.5rem;
+    width: 3.5rem;
+    
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}

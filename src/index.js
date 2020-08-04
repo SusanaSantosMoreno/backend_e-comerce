@@ -9,6 +9,8 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 //Partials
 hbs.registerPartials(__dirname + '/views/partials', function (err) {});
+hbs.registerPartials(__dirname + '/views/partials/homeSections', function (err) {});
+
 
 //Settings
 app.set('port', PORT);
