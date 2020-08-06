@@ -1,11 +1,8 @@
-{{> head}}
-{{> header}}
-
+<%- include ('head.html') -%>
+<%- include ('header.html') -%>
 <head>
   <!--CSS-->
   <link rel="stylesheet" href="css/home.css">
-  <!--JavaScript-->
-  <script type="text/javascript" src="scripts/home.js"></script>
 </head>
 <section id="carrousel">
   <div id="carouselExampleIndicators" class="carousel slide pb-2" data-ride="carousel">
@@ -20,7 +17,7 @@
         <img src="/images/deanna-alys-cocoOil.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption carousel-text">
           <div class="col-lg-6 float-left">
-            <h1 class="text-left">Lorem ipsum dolor sit</h1>
+            <h1 class="text-left">lorem ipsum dolor sit</h1>
             <p class="text-left">amet consectetur adipisicing elit. Obcaecati sunt iure vel similique reprehenderit
               veniam ex earum. Debitis quos dolore tempora quis consectetur deleniti facere repellendus sit! Dicta,
               aspernatur eligendi.
@@ -79,4 +76,5 @@
     </a>
   </div>
 </section>
-{{> bestSellersSection}}
+
+<%- include ('homeSections/bestSellersSection.html', {productTypes: productTypes}) -%>
