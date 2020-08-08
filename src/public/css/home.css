@@ -9,9 +9,18 @@ body {
     font-weight: 300;
 }
 
-.carousel-item img{
-    height: 800px;
+@media screen and (max-width: 1400px) {
+    .carousel-item img{
+        height: 800px;
+    }
 }
+
+@media screen and (min-width: 1400px) {
+    .carousel-item img{
+        height: 1000px;
+    }
+}
+
 
 .carousel-text{
     color: black;

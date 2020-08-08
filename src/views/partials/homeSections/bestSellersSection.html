@@ -6,10 +6,10 @@
       <ul class="nav itemsList list-group list-group-horizontal" role="tablist">
         <% productTypes.forEach(function(productType) { %>
         <li class="list-group-item nav-item">
-          <a id="<%=productType.id%>" data-toggle="tab" href="<%=productType.href%>" aria-controls="face" aria-selected="<%=productType.selected%>">
-            <img class='d-flex justify-content-center mx-auto' src="<%=productType.icon%>" width="35" height="35"
+          <a id="<%=productType.categoryName + '-link'%>" data-toggle="tab" href="<%='#tab-' + productType.categoryName%>">
+            <img class='d-flex justify-content-center mx-auto' src="<%=productType.categoryIcon%>" width="35" height="35"
               alt="" loading="lazy">
-            <span><%=productType.name%></span>
+            <span><%=productType.categoryName%></span>
           </a>
         </li><!--
         <li class="list-group-item ml-3">
@@ -47,7 +47,7 @@
       <div id="tab-face" class="tab-pane fade show active" role="tabpanel" aria-labelledby="face-link">
         <div class="row">
           <div class="card col shadow" style="width: 18rem;">
-            <img src="images/products/CactusSerumColourpop.jpg" class="card-img-top mt-2" alt="Cactus Serum">
+            <img src="images/products/Cactus_Colourpop.jpg" class="card-img-top mt-2" alt="Cactus Serum">
             <div class="card-body">
               <h5 class="card-title">Cactus</h5>
               <p class="card-subtitle">ColourPop</p>
@@ -65,7 +65,7 @@
             </div>
           </div>
           <div class="card col ml-4 shadow" style="width: 18rem;">
-            <img src="images/products/TumericSerum_Colourpop.jpg" class="card-img-top mt-2" alt="Turmetic Serum">
+            <img src="images/products/Tumeric_Colourpop.jpg" class="card-img-top mt-2" alt="Turmetic Serum">
             <div class="card-body">
               <h5 class="card-title">Turmeric</h5>
               <p class="card-subtitle">ColourPop</p>
@@ -83,7 +83,7 @@
             </div>
           </div>
           <div class="card col ml-4 shadow" style="width: 18rem;">
-            <img src="images/products/BfdCleaner_Colourpop.jpg" class="card-img-top mt-2" alt="...">
+            <img src="images/products/BFDOilCleanser_Colourpop.jpg" class="card-img-top mt-2" alt="...">
             <div class="card-body">
               <h5 class="card-title">BFD Oil Cleanser</h5>
               <p class="card-subtitle">ColourPop</p>
@@ -101,7 +101,7 @@
             </div>
           </div>
           <div class="card col ml-4 shadow" style="width: 18rem;">
-            <img src="images/products/StrawberryFaceMilk_colourpop.jpg" class="card-img-top mt-2" alt="...">
+            <img src="images/products/Strawberry_Colourpop.jpg" class="card-img-top mt-2" alt="...">
             <div class="card-body">
               <h5 class="card-title">Strawberry</h5>
               <p class="card-subtitle">ColourPop</p>
@@ -120,7 +120,7 @@
           </div>
         </div>
       </div>
-      <div id="tab-makeup" class="tab-pane fade" role="tabpanel" aria-labelledby="makeup-link">
+      <div id="tab-make_up" class="tab-pane fade" role="tabpanel" aria-labelledby="makeup-link">
         <div class="row">
           <div class="card col shadow" style="width: 18rem;">
             <img src="images/products/GoingCoconuts_Palette.jpg" class="card-img-top mt-2" alt="...">

@@ -6,8 +6,8 @@ const path = require('path');
 //Static files
 app.use(express.static(path.join(__dirname, '/public')));
 
-//Partials
-
+//Middlewares
+app.use(express.json());
 
 //Settings
 app.set('port', PORT);
