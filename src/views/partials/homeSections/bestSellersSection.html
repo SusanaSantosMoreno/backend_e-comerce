@@ -1,429 +1,135 @@
 
-<section>
+<section id="bestSellersSection" class="mb-5">
   <div class="container mt-5 mb-5">
     <h3 class="blockTitle">Bestseller Products</h3>
     <div class="mt-3 d-flex justify-content-center">
       <ul class="nav itemsList list-group list-group-horizontal" role="tablist">
-        <% productTypes.forEach(function(productType) { %>
+        <%productTypes.forEach(function(productType) { %>
         <li class="list-group-item nav-item">
           <a id="<%=productType.categoryName + '-link'%>" data-toggle="tab" href="<%='#tab-' + productType.categoryName%>">
             <img class='d-flex justify-content-center mx-auto' src="<%=productType.categoryIcon%>" width="35" height="35"
               alt="" loading="lazy">
             <span><%=productType.categoryName%></span>
           </a>
-        </li><!--
-        <li class="list-group-item ml-3">
-          <a id="makeup_link" data-toggle="tab" href="#tab-makeup" aria-controls="makeup" aria-selected="false">
-            <img class='d-flex justify-content-center mx-auto' src="/images/icons/makeup_icon.svg" width="35"
-              height="35" alt="" loading="lazy">
-            <span>Make-up</span>
-          </a>
         </li>
-        <li class="list-group-item ml-3">
-          <a id="hair_link" data-toggle="tab" href="#tab-hair" aria-controls="hair" aria-selected="false">
-            <img class='d-flex justify-content-center mx-auto' src="/images/icons/hair_icon.svg" width="35" height="35"
-              alt="" loading="lazy">
-            <span>Hair</span>
-          </a>
-        </li>
-        <li class="list-group-item ml-3">
-          <a id="body_link" data-toggle="tab" href="#tab-body" aria-controls="body" aria-selected="false">
-            <img class='d-flex justify-content-center mx-auto' src="/images/icons/body_icon.svg" width="35" height="35"
-              alt="" loading="lazy">
-            <span>Body</span>
-          </a>
-        </li>
-        <li class="list-group-item ml-3">
-          <a id="sun_link" data-toggle="tab" href="#tab-sun" aria-controls="sun" aria-selected="false">
-            <img class='d-flex justify-content-center mx-auto' src="/images/icons/sun_icon.svg" width="35" height="35"
-              alt="" loading="lazy">
-            <span>Sun</span>
-          </a>
-        </li>-->
         <% }); %>
       </ul>
     </div>
     <div class="tab-content mt-3">
       <div id="tab-face" class="tab-pane fade show active" role="tabpanel" aria-labelledby="face-link">
         <div class="row">
-          <div class="card col shadow" style="width: 18rem;">
-            <img src="images/products/Cactus_Colourpop.jpg" class="card-img-top mt-2" alt="Cactus Serum">
+          <%products.forEach(function(product){ 
+            if(product.productCategory == 1) {%>
+          <div class="card col shadow mr-4" style="width: 18rem;">
+            <img src="<%=product.productImage%>" class="card-img-top mt-2" alt="<%=product.productName%>">
             <div class="card-body">
-              <h5 class="card-title">Cactus</h5>
-              <p class="card-subtitle">ColourPop</p>
-              <p class="card-text">Face Serum Boost</p>
-              <span class="card-text price mr-2">$12
+              <h5 class="card-title"><%=product.productName%></h5>
+              <p class="card-subtitle"><%=product.brandName%></p>
+              <p class="card-text"><%=product.productShortDesc%></p>
+              <span class="card-text price mr-2"><%='$' + product.productPrice%>
                 <span class="starts">
+                  <% for(var i=0; i<product.productRating; i++){ %>
                   <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star-half'></i>
+                  <%}%>
                 </span>
               </span>
               <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
             </div>
           </div>
-          <div class="card col ml-4 shadow" style="width: 18rem;">
-            <img src="images/products/Tumeric_Colourpop.jpg" class="card-img-top mt-2" alt="Turmetic Serum">
-            <div class="card-body">
-              <h5 class="card-title">Turmeric</h5>
-              <p class="card-subtitle">ColourPop</p>
-              <p class="card-text">Face Serum Boost</p>
-              <span class="card-text price mr-2">$12
-                <span class="starts">
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bx-star'></i>
-                </span>
-              </span>
-              <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
-            </div>
-          </div>
-          <div class="card col ml-4 shadow" style="width: 18rem;">
-            <img src="images/products/BFDOilCleanser_Colourpop.jpg" class="card-img-top mt-2" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">BFD Oil Cleanser</h5>
-              <p class="card-subtitle">ColourPop</p>
-              <p class="card-text">Face Cleanser</p>
-              <span class="card-text price mr-2">$14
-                <span class="starts">
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star-half'></i>
-                </span>
-              </span>
-              <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
-            </div>
-          </div>
-          <div class="card col ml-4 shadow" style="width: 18rem;">
-            <img src="images/products/Strawberry_Colourpop.jpg" class="card-img-top mt-2" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Strawberry</h5>
-              <p class="card-subtitle">ColourPop</p>
-              <p class="card-text">Face Milk</p>
-              <span class="card-text price mr-2">$14
-                <span class="starts">
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star-half'></i>
-                </span>
-              </span>
-              <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
-            </div>
-          </div>
+          <%}
+        });%>
         </div>
       </div>
       <div id="tab-make_up" class="tab-pane fade" role="tabpanel" aria-labelledby="makeup-link">
         <div class="row">
-          <div class="card col shadow" style="width: 18rem;">
-            <img src="images/products/GoingCoconuts_Palette.jpg" class="card-img-top mt-2" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Going Coconuts</h5>
-              <p class="card-subtitle">ColourPop</p>
-              <p class="card-text">Shadow Palette</p>
-              <span class="card-text price mr-2">$12
-                <span class="starts">
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bx-star'></i>
+          <%products.forEach(function(product){ 
+            if(product.productCategory == 2) { %>
+            <div class="card col shadow mr-4" style="width: 18rem;">
+              <img src="<%=product.productImage%>" class="card-img-top mt-2" alt="<%=product.productName%>">
+              <div class="card-body">
+                <h5 class="card-title"><%=product.productName%></h5>
+                <p class="card-subtitle"><%=product.brandName%></p>
+                <p class="card-text"><%=product.productShortDesc%></p>
+                <span class="card-text price mr-2"><%='$' + product.productPrice%>
+                  <span class="starts">
+                    <% for(var i=0; i<product.productRating; i++){ %>
+                    <i class='bx bxs-star'></i>
+                    <%}%>
+                  </span>
                 </span>
-              </span>
-              <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
+                <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
+              </div>
             </div>
-          </div>
-          <div class="card col ml-4 shadow" style="width: 18rem;">
-            <img src="images/products/hydrating_fundation.jpg" class="card-img-top mt-2" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Pretty Fresh</h5>
-              <p class="card-subtitle">ColourPop</p>
-              <p class="card-text">Hyaluronic Hydrating Foundation</p>
-              <span class="card-text price mr-2">$16
-                <span class="starts">
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bx-star'></i>
-                  <i class='bx bx-star'></i>
-                </span>
-              </span>
-              <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
-            </div>
-          </div>
-          <div class="card col ml-4 shadow" style="width: 18rem;">
-            <img src="images/products/Puddin_Lipstick.jpg" class="card-img-top mt-2" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Puddin'</h5>
-              <p class="card-subtitle">ColourPop</p>
-              <p class="card-text">Lux Liquid Lipstick</p>
-              <span class="card-text price mr-2">$8
-                <span class="starts">
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star-half'></i>
-                </span>
-              </span>
-              <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
-            </div>
-          </div>
-          <div class="card col ml-4 shadow" style="width: 18rem;">
-            <img src="images/products/Whatever_Palette.jpg" class="card-img-top mt-2" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Strawberry</h5>
-              <p class="card-subtitle">ColourPop</p>
-              <p class="card-text">Face Milk</p>
-              <span class="card-text price mr-2">$14
-                <span class="starts">
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star-half'></i>
-                </span>
-              </span>
-              <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
-            </div>
-          </div>
+            <%}});%>
         </div>
       </div>
       <div id="tab-hair" class="tab-pane fade" role="tabpanel" aria-labelledby="hair-link">
         <div class="row">
-          <div class="card col shadow" style="width: 18rem;">
-            <img src="images/products/AceiteCoco_DrOrganic.jpeg" class="card-img-top mt-2" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Organic Virgin Coconut Oil</h5>
-              <p class="card-subtitle">Dr.Organic</p>
-              <p class="card-text">monoi moisture melt body and hair oil</p>
-              <span class="card-text price mr-2">$16
-                <span class="starts">
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star-half'></i>
+          <%products.forEach(function(product){ 
+            if(product.productCategory == 3) {%>
+            <div class="card col shadow mr-4" style="width: 18rem;">
+              <img src="<%=product.productImage%>" class="card-img-top mt-2" alt="<%=product.productName%>">
+              <div class="card-body">
+                <h5 class="card-title"><%=product.productName%></h5>
+                <p class="card-subtitle"><%=product.brandName%></p>
+                <p class="card-text"><%=product.productShortDesc%></p>
+                <span class="card-text price mr-2"><%='$' + product.productPrice%>
+                  <span class="starts">
+                    <% for(var i=0; i<product.productRating; i++){ %>
+                    <i class='bx bxs-star'></i>
+                    <%}%>
+                  </span>
                 </span>
-              </span>
-              <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
+                <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
+              </div>
             </div>
-          </div>
-          <div class="card col ml-4 shadow" style="width: 18rem;">
-            <img src="images/products/AcondicionadorRizos_Boucléme.jpg" class="card-img-top mt-2" alt="..."
-              style="padding-top:1.8rem;">
-            <div class="card-body">
-              <h5 class="card-title">Curl Conditioner</h5>
-              <p class="card-subtitle">Boucléme</p>
-              <p class="card-text">super-hydrating curl conditioner</p>
-              <span class="card-text price mr-2">$24
-                <span class="starts">
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bx-star'></i>
-                </span>
-              </span>
-              <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
-            </div>
-          </div>
-          <div class="card col ml-4 shadow" style="width: 18rem;">
-            <img src="images/products/MádaraGrowVolume_champú.jpeg" class="card-img-top mt-2" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Grow Volume Champoo</h5>
-              <p class="card-subtitle">Mádara</p>
-              <p class="card-text">Volumizing shampoo</p>
-              <span class="card-text price mr-2">$22
-                <span class="starts">
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bx-star'></i>
-                  <i class='bx bx-star'></i>
-                  <i class='bx bx-star'></i>
-                </span>
-              </span>
-              <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
-            </div>
-          </div>
-          <div class="card col ml-4 shadow" style="width: 18rem;">
-            <img src="images/products/serumCapilar_BiofficinaToscana.jpeg" class="card-img-top mt-2" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Siero finish anticrespo</h5>
-              <p class="card-subtitle">Biofficina Toscana</p>
-              <p class="card-text">Anti-frizz finishing serum</p>
-              <span class="card-text price mr-2">$12
-                <span class="starts">
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bx-star'></i>
-                  <i class='bx bx-star'></i>
-                </span>
-              </span>
-              <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
-            </div>
-          </div>
+            <%}});%>
         </div>
       </div>
       <div id="tab-body" class="tab-pane fade" role="tabpanel" aria-labelledby="body-link">
         <div class="row">
-          <div class="card col shadow" style="width: 18rem;">
-            <img src="images/products/ShimmeringBodyPowder_body.jpg" class="card-img-top mt-2" 
-            alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Going Coconuts</h5>
-              <p class="card-subtitle">ColourPop</p>
-              <p class="card-text">Shadow Palette</p>
-              <span class="card-text price mr-2">$12
-                <span class="starts">
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bx-star'></i>
+          <%products.forEach(function(product){ 
+            if(product.productCategory == 4) {%>
+            <div class="card col shadow mr-4" style="width: 18rem;">
+              <img src="<%=product.productImage%>" class="card-img-top mt-2" alt="<%=product.productName%>">
+              <div class="card-body">
+                <h5 class="card-title"><%=product.productName%></h5>
+                <p class="card-subtitle"><%=product.brandName%></p>
+                <p class="card-text"><%=product.productShortDesc%></p>
+                <span class="card-text price mr-2"><%='$' + product.productPrice%>
+                  <span class="starts">
+                    <% for(var i=0; i<product.productRating; i++){ %>
+                    <i class='bx bxs-star'></i>
+                    <%}%>
+                  </span>
                 </span>
-              </span>
-              <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
+                <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
+              </div>
             </div>
-          </div>
-          <div class="card col ml-4 shadow" style="width: 18rem;">
-            <img src="images/products/bodyKabukiBrush_body.jpg" class="card-img-top mt-2" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Strawberry</h5>
-              <p class="card-subtitle">ColourPop</p>
-              <p class="card-text">Face Milk</p>
-              <span class="card-text price mr-2">$14
-                <span class="starts">
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star-half'></i>
-                </span>
-              </span>
-              <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
-            </div>
-          </div>
-          <div class="card col ml-4 shadow" style="width: 18rem;">
-            <img src="images/products/SolBodyLotion_body.jpg" class="card-img-top mt-2" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Strawberry</h5>
-              <p class="card-subtitle">ColourPop</p>
-              <p class="card-text">Face Milk</p>
-              <span class="card-text price mr-2">$14
-                <span class="starts">
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star-half'></i>
-                </span>
-              </span>
-              <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
-            </div>
-          </div>
-          <div class="card col ml-4 shadow" style="width: 18rem;">
-            <img src="images/products/SolGlowOil_body.jpeg" class="card-img-top mt-2" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Strawberry</h5>
-              <p class="card-subtitle">ColourPop</p>
-              <p class="card-text">Face Milk</p>
-              <span class="card-text price mr-2">$14
-                <span class="starts">
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star-half'></i>
-                </span>
-              </span>
-              <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
-            </div>
-          </div>
+            <%}});%>
         </div>
       </div>
       <div id="tab-sun" class="tab-pane fade" role="tabpanel" aria-labelledby="sun-link">
         <div class="row">
-          <div class="card col shadow" style="width: 18rem;">
-            <img src="images/products/wetSkin50spf_sun.jpeg" class="card-img-top mt-2" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Wet Skin 50spf Protection</h5>
-              <p class="card-subtitle">Youth lab</p>
-              <p class="card-text">Dry touch tanning oil with beta-carotene</p>
-              <span class="card-text price mr-2">$25
-                <span class="starts">
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bx-star'></i>
-                  <i class='bx bx-star'></i>
+          <%products.forEach(function(product){ 
+            if(product.productCategory == 5) {%>
+            <div class="card col shadow mr-4" style="width: 18rem;">
+              <img src="<%=product.productImage%>" class="card-img-top mt-2" alt="<%=product.productName%>">
+              <div class="card-body">
+                <h5 class="card-title"><%=product.productName%></h5>
+                <p class="card-subtitle"><%=product.brandName%></p>
+                <p class="card-text"><%=product.productShortDesc%></p>
+                <span class="card-text price mr-2"><%='$' + product.productPrice%>
+                  <span class="starts">
+                    <% for(var i=0; i<product.productRating; i++){ %>
+                    <i class='bx bxs-star'></i>
+                    <%}%>
+                  </span>
                 </span>
-              </span>
-              <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
+                <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
+              </div>
             </div>
-          </div>
-          <div class="card col ml-4 shadow" style="width: 18rem;">
-            <img src="images/products/GoldenSunshine_intensifier.jpeg" class="card-img-top mt-2" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Golden Sunshine Intensifier</h5>
-              <p class="card-subtitle">Australian Gold</p>
-              <p class="card-text">tan intensifier with aloe vera and Shea Butter vitamin E</p>
-              <span class="card-text price mr-2">$12
-                <span class="starts">
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star-half'></i>
-                </span>
-              </span>
-              <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
-            </div>
-          </div>
-          <div class="card col ml-4 shadow" style="width: 18rem;">
-            <img src="images/products/TanningLotion_stMoriz.jpeg" class="card-img-top mt-2" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Tanning Lotion</h5>
-              <p class="card-subtitle">ST.Moriz</p>
-              <p class="card-text">tan intensifier with guide colour streak free</p>
-              <span class="card-text price mr-2">$10
-                <span class="starts">
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star-half'></i>
-                </span>
-              </span>
-              <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
-            </div>
-          </div>
-          <div class="card col ml-4 shadow" style="width: 18rem;">
-            <img src="images/products/SunCareValueSet_YouthLab.jpeg" class="card-img-top mt-2" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Sun Care Value Set</h5>
-              <p class="card-subtitle">Youth Lab</p>
-              <p class="card-text">Sun care and body lotion for oily skin</p>
-              <span class="card-text price mr-2">$23
-                <span class="starts">
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                </span>
-              </span>
-              <button type="button" class="btn btn-outline-dark btn-sm mt-3">Add to Cart</button>
-            </div>
-          </div>
+            <%}});%>
         </div>
       </div>
     </div>
